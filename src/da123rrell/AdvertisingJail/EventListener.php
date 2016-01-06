@@ -14,7 +14,7 @@ class EventListener implements Listener{
             $this->plugin = $plugin;
     }
     
-    private $webEndings = array(".net",".com",".co",".org",".info",".tk"); 
+    private $webEndings = array(".net",".com",".co",".org",".info",".tk",".cn",".cc"); 
         
     /**
     * @param PlayerChatEvent $event
@@ -34,7 +34,7 @@ class EventListener implements Listener{
             if (preg_match('/[0-9]+/', $parts[1]))
             {
                 $event->setCancelled(true);
-				$this->plugin->getServer()->dispatchCommand(new ConsoleCommandSender(), "jail $name 1 10 Advertising"); 
+				$this->plugin->getServer()->dispatchCommand(new ConsoleCommandSender(), "jail $name 1 3 Advertising"); 
                 echo "[AdBlock]: Jailed " . $playername . " For saying: ". $message . " ========================\n";
             }
         }
@@ -43,7 +43,7 @@ class EventListener implements Listener{
             if (strpos($message, $url) !== FALSE) 
             {
                 $event->setCancelled(true);
-				$this->plugin->getServer()->dispatchCommand(new ConsoleCommandSender(), "jail $name 1 10 Advertising");
+				$this->plugin->getServer()->dispatchCommand(new ConsoleCommandSender(), "jail $name 1 3 Advertising");
                 echo "[AdBlock]: Jailed " . $playername . " For advertising ";
             }
         }
