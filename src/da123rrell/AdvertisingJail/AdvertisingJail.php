@@ -16,15 +16,15 @@ use pocketmine\plugin\PluginLoadOrder;
 use pocketmine\Server;
 use pocketmine\utils\TextFormat;
 
-class AdvertisingKick extends PluginBase{
+class AdvertisingJail extends PluginBase{
 
     public function onEnable(){
-        $this->getLogger()->info("AdvertisingKick Starterd");
+        $this->getLogger()->info("AdvertisingJail Starterd");
         $this->listener = new EventListener($this);
         $this->getServer()->getPluginManager()->registerEvents($this->listener, $this);
     }
 
     public function onDisable(){
-        $this->getLogger()->info("AdvertisingKick Stopped");
+        $this->getLogger()->info("AdvertisingJail Stopped");
     }
 }
